@@ -1,0 +1,190 @@
+name: BlueSecret
+display_name: BlueSecret
+version: 1.2.0
+theme_key: 796c5a3da327b528b2d73f084afc0164
+author:
+  name: "Webibazaar Templates"
+  email: "info@webibazaar.com"
+  url: "http://www.webibazaar.com"
+
+meta:
+  compatibility:
+      from: 1.7.0.0
+      to: ~
+
+  available_layouts:
+    layout-full-width:
+      name: Full Width
+      description: No side columns, ideal for distraction-free pages such as product pages.
+    layout-both-columns:
+      name: Three Columns
+      description: One large central column and 2 side columns.
+    layout-left-column:
+      name: Two Columns, small left column
+      description: Two columns with a small left column
+    layout-right-column:
+      name: Two Columns, small right column
+      description: Two columns with a small right column
+
+assets:
+  # If you're using this theme as child and you want to load
+  # the parent theme assets, uncomment this line.
+#  use_parent_assets: true
+
+  # The following lines are showing how to load assets in your page
+  # Uncomment and change value to start loading css or js files
+#  css:
+#    all:
+#      - id: custom-lib-style
+#        path: assets/css/custom-lib.css
+#    product:
+#      - id: product-style
+#        path: assets/css/product.css
+#        media: all
+#        priority: 200
+#  js:
+#    cart:
+#      - id: cat-extra-lib
+#        path: assets/js/cart-lib.js
+
+
+global_settings:
+  configuration:
+    PS_IMAGE_QUALITY: png
+  modules:
+   to_enable:
+     - ps_linklist
+     - ps_featuredproducts
+     - ps_newproducts
+     - ps_bestsellers
+     - ps_specials
+     - ps_emailsubscription
+     - ps_socialfollow
+     - ps_categoryproducts
+     - wbblocksearch
+     - wbblog
+     - wbcategoryfeaturedproducts
+     - wbimageslider
+     - wbimgbanner
+     - wblogoslider
+     - wbmegamenu
+     - wbstaticblocks
+     - wbthemeconfigurator
+     - wbthemecustomizer
+     - blockwishlist
+     - productcomments
+     - wbcompare
+   to_disable:
+     - ps_banner
+     - ps_customtext
+     - ps_imageslider
+  hooks:
+    modules_to_hook:
+      displayNav2:
+        - ps_languageselector
+        - ps_currencyselector
+      displayWbNav2:
+        - blockwishlist
+      displayTop:
+        - wbmegamenu
+        - wbblocksearch
+        - ps_customersignin
+        - ps_shoppingcart
+      displayHome:
+        - wbimageslider
+        - wbcategoryfeaturedproducts
+        - ps_featuredproducts
+        - ps_newproducts
+        - ps_bestsellers
+        - wbimgbanner
+        - ps_specials
+        - wbblog
+        - ps_emailsubscription
+        - wblogoslider
+        - wbstaticblocks
+      displayHomeBlock:
+        - wbstaticblocks
+      displayTopColumn:
+        - wbstaticblocks
+      displayMyAccountBlock:
+        - blockwishlist
+      displayCustomerAccount:
+        - blockwishlist
+      displayLeftColumn:
+        - ps_categorytree
+        - ps_facetedsearch
+      displayFooter:
+        - ps_socialfollow
+        - ps_contactinfo
+        - ps_customeraccountlinks
+        - ps_linklist
+      displayFooterDown:
+        - wbstaticblocks
+      displayFooterProduct:
+        - ps_categoryproducts
+        - ps_viewedproduct
+      displaySearch:
+        - ps_searchbar
+      displayProductAdditionalInfo:
+        - blockwishlist
+        - ps_sharebuttons
+      displayReassurance:
+        - blockreassurance
+
+  image_types:
+    cart_default:
+      width: 125
+      height: 125
+      scope: [products]
+    small_default:
+      width: 170
+      height: 170
+      scope: [products, categories, manufacturers, suppliers]
+    medium_default:
+      width: 452
+      height: 452
+      scope: [products, manufacturers, suppliers]
+    home_default:
+      width: 315
+      height: 350
+      scope: [products]
+    large_default:
+      width: 730
+      height: 812
+      scope: [products, manufacturers, suppliers]
+    category_default:
+      width: 1186
+      height: 150
+      scope: [categories]
+    stores_default:
+      width: 170
+      height: 115
+      scope: [stores]
+    category_feature:
+      width: 282
+      height: 350
+      scope: [categories]
+
+theme_settings:
+  default_layout: layout-full-width
+  layouts:
+    category: layout-left-column
+    best-sales: layout-left-column
+    new-products: layout-left-column
+    prices-drop: layout-left-column
+    contact: layout-left-column
+  dependencies:
+  modules:
+     - wbblocksearch
+     - wbblog
+     - wbcategoryfeaturedproducts
+     - wbimageslider
+     - wbimgbanner
+     - wblogoslider
+     - wbmegamenu
+     - wbstaticblocks
+     - wbthemeconfigurator
+     - wbthemecustomizer
+     - blockwishlist
+     - productcomments
+     - wbcompare

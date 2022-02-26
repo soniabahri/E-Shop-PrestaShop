@@ -1,0 +1,224 @@
+version: '3'
+
+services:
+  mariadb:
+    image: mariadb:10.6.4
+    container_name: ${COMPOSE_PROJECT_NAME}_mariadb
+    environment:
+      - MARIADB_DATABASE=prestashop
+      - MARIADB_ROOT_PASSWORD=superadmin
+    ports:
+      - '${LOCAL_MARIA_DB_PORT}:3306'
+    volumes:
+      - 'mariadb_data:/var/lib/mysql'
+
+  prestashop:
+    image: prestashop/prestashop:${PS_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_prestashop
+    ports:
+      - '${LOCAL_PRESTASHOP_PORT}:80'
+    environment:
+      - DB_SERVER=mariadb
+      - DB_USER=root
+      - DB_PASSWD=superadmin
+      - DB_NAME=prestashop
+      - PS_INSTALL_AUTO=1
+      - PS_DOMAIN
+      - PS_FOLDER_ADMIN=admin-dev
+      - PS_FOLDER_INSTALL=install-dev
+      - PS_LANGUAGE
+      - PS_COUNTRY
+    volumes:
+      - 'prestashop_data:/var/www/html/'
+      - '../:/var/www/html/modules/ps_metrics'
+    depends_on:
+      - mariadb
+
+  ngrok-prestashop:
+    image: wernight/ngrok:latest
+    container_name: ${COMPOSE_PROJECT_NAME}_ngrok
+    environment:
+      - NGROK_AUTH
+      - NGROK_SUBDOMAIN=${NGROK_PRESTASHOP_SUBDOMAIN}
+      - NGROK_REGION=eu
+      - NGROK_DEBUG=true
+      - NGROK_PORT=prestashop:80
+    volumes:
+      - 'ngrok_data:/home/ngrok/.ngrok2/'
+    depends_on:
+      - prestashop
+
+  ngrok-api:
+    image: wernight/ngrok:latest
+    container_name: ${COMPOSE_PROJECT_NAME}_ngrok-api
+    environment:
+      - NGROK_AUTH
+      - NGROK_SUBDOMAIN=${NGROK_API_SUBDOMAIN}
+      - NGROK_REGION=eu
+      - NGROK_DEBUG=true
+      - NGROK_PORT=metrics-api:3000
+    volumes:
+      - 'ngrok_data_api:/home/ngrok/.ngrok2/'
+    depends_on:
+      - prestashop
+
+  metrics-api:
+    container_name: ${COMPOSE_PROJECT_NAME}_metrics-api
+    # image: eu.gcr.io/psessentials-production/analytics-api:metrics-api-2.4.9
+    build: '${METRICS_API_PATH}'
+    environment:
+      - NODE_ENV
+      - ENVIRONMENT
+      - EVENTSTORE_METRICS_CREDENTIALS_USERNAME
+      - EVENTSTORE_METRICS_CREDENTIALS_PASSWORD
+      - EVENTSTORE_METRICS_TCP_ENDPOINT
+      - EVENTSTORE_METRICS_TCP_PORT
+      - EVENTSTORE_METRICS_HTTP_ENDPOINT
+      - ENVETSTORE_METRICS_HTPP_PORT
+      - EVENTSTORE_METRICS_POOLOPTIONS_MIN
+      - EVENTSTORE_METRICS_POOLOPTIONS_MAX
+      - EVENTSTORE_EVENTBUS_CREDENTIALS_USERNAME
+      - EVENTSTORE_EVENTBUS_CREDENTIALS_PASSWORD
+      - EVENTSTORE_EVENTBUS_TCP_ENDPOINT
+      - EVENTSTORE_EVENTBUS_TCP_PORT
+      - EVENTSTORE_EVENTBUS_HTTP_ENDPOINT
+      - ENVETSTORE_EVENTBUS_HTPP_PORT
+      - EVENTSTORE_EVENTBUS_POOLOPTIONS_MIN
+      - EVENTSTORE_EVENTBUS_POOLOPTIONS_MAX
+      - EVENTSTORE_BILLING_CREDENTIALS_USERNAME
+      - EVENTSTORE_BILLING_CREDENTIALS_PASSWORD
+      - EVENTSTORE_BILLING_TCP_ENDPOINT
+      - EVENTSTORE_BILLING_TCP_PORT
+      - EVENTSTORE_BILLING_HTTP_ENDPOINT
+      - ENVETSTORE_BILLING_HTPP_PORT
+      - EVENTSTORE_BILLING_POOLOPTIONS_MIN
+      - EVENTSTORE_BILLING_POOLOPTIONS_MAX
+      - CLIENT_ID
+      - CLIENT_SECRET
+      - REDIRECT_URI
+      - PGSQL_USER
+      - PGSQL_PASSWORD
+      - PGSQL_HOST
+      - PGSQL_PORT
+      - PGSQL_DATABASE
+      - PGSQL_EVENTBUS_USER
+      - PGSQL_EVENTBUS_PASSWORD
+      - PGSQL_EVENTBUS_HOST
+      - PGSQL_EVENTBUS_PORT
+      - PGSQL_EVENTBUS_DATABASE
+      - QUEUE_SHOP_HOST
+      - QUEUE_SHOP_PORT
+      - SENTRY_DSN
+      - SENTRY_ENV
+    command: node ./dist/src/analytics.api
+    ports:
+      - ${LOCAL_METRICS_API_PORT}:3000
+    depends_on:
+      - postgres
+      - eventstore
+
+  metrics-subscription:
+    container_name: ${COMPOSE_PROJECT_NAME}_metrics-subscription
+    # image: eu.gcr.io/psessentials-production/analytics-api:metrics-api-2.4.9
+    build: '${METRICS_API_PATH}'
+    environment:
+      - NODE_ENV
+      - ENVIRONMENT
+      - EVENTSTORE_METRICS_CREDENTIALS_USERNAME
+      - EVENTSTORE_METRICS_CREDENTIALS_PASSWORD
+      - EVENTSTORE_METRICS_TCP_ENDPOINT
+      - EVENTSTORE_METRICS_TCP_PORT
+      - EVENTSTORE_METRICS_HTTP_ENDPOINT
+      - ENVETSTORE_METRICS_HTPP_PORT
+      - EVENTSTORE_METRICS_POOLOPTIONS_MIN
+      - EVENTSTORE_METRICS_POOLOPTIONS_MAX
+      - EVENTSTORE_EVENTBUS_CREDENTIALS_USERNAME
+      - EVENTSTORE_EVENTBUS_CREDENTIALS_PASSWORD
+      - EVENTSTORE_EVENTBUS_TCP_ENDPOINT
+      - EVENTSTORE_EVENTBUS_TCP_PORT
+      - EVENTSTORE_EVENTBUS_HTTP_ENDPOINT
+      - ENVETSTORE_EVENTBUS_HTPP_PORT
+      - EVENTSTORE_EVENTBUS_POOLOPTIONS_MIN
+      - EVENTSTORE_EVENTBUS_POOLOPTIONS_MAX
+      - EVENTSTORE_BILLING_CREDENTIALS_USERNAME
+      - EVENTSTORE_BILLING_CREDENTIALS_PASSWORD
+      - EVENTSTORE_BILLING_TCP_ENDPOINT
+      - EVENTSTORE_BILLING_TCP_PORT
+      - EVENTSTORE_BILLING_HTTP_ENDPOINT
+      - ENVETSTORE_BILLING_HTPP_PORT
+      - EVENTSTORE_BILLING_POOLOPTIONS_MIN
+      - EVENTSTORE_BILLING_POOLOPTIONS_MAX
+      - CLIENT_ID
+      - CLIENT_SECRET
+      - REDIRECT_URI
+      - PGSQL_USER
+      - PGSQL_PASSWORD
+      - PGSQL_HOST
+      - PGSQL_PORT
+      - PGSQL_DATABASE
+      - PGSQL_EVENTBUS_USER
+      - PGSQL_EVENTBUS_PASSWORD
+      - PGSQL_EVENTBUS_HOST
+      - PGSQL_EVENTBUS_PORT
+      - PGSQL_EVENTBUS_DATABASE
+      - QUEUE_SHOP_HOST
+      - QUEUE_SHOP_PORT
+      - SENTRY_DSN
+      - SENTRY_ENV
+    command: node ./dist/src/analytics.subscription --subscription=metrics-google
+    depends_on:
+      - eventstore
+
+  redis:
+    image: redis:6.2.6-alpine
+    container_name: ${COMPOSE_PROJECT_NAME}_redis
+    ports:
+      - ${LOCAL_REDIS_PORT}:6379
+    volumes:
+      - redis_data:/data
+
+  bullboard:
+    image: deadly0/bull-board
+    container_name: ${COMPOSE_PROJECT_NAME}_bullboard
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
+    ports:
+      - ${LOCAL_BULL_BOARD_PORT}:3000
+    depends_on:
+      - redis
+
+  postgres:
+    image: postgres:14.0-alpine
+    container_name: ${COMPOSE_PROJECT_NAME}_postgres
+    environment:
+      - POSTGRES_USER=analytics
+      - POSTGRES_PASSWORD=analytics
+      - POSTGRES_DB=analytics
+    volumes:
+      - 'postgres_data:/var/lib/postgresql/data'
+    ports:
+      - ${LOCAL_POSTGRES_PORT}:5432
+
+  eventstore:
+    image: eventstore/eventstore:release-5.0.8
+    container_name: ${COMPOSE_PROJECT_NAME}_eventstore
+    volumes:
+      - eventstore_data:/var/lib/eventstore
+    ports:
+      - '${LOCAL_EVENTSTORE_PORT_1}:1113'
+      - '${LOCAL_EVENTSTORE_PORT_2}:2113'
+    environment:
+      - RUN_PROJECTIONS=All
+      - EVENTSTORE_INSECURE=true
+      - EVENTSTORE_ENABLE_EXTERNAL_TCP=true
+
+volumes:
+  mariadb_data:
+  prestashop_data:
+  ngrok_data:
+  ngrok_data_api:
+  postgres_data:
+  eventstore_data:
+  redis_data:

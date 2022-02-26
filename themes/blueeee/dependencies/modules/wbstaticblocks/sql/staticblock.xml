@@ -1,0 +1,204 @@
+<wb_static_blocks>
+<!-- static block configuration -->
+    <block>
+        <id_wbstaticblock>1</id_wbstaticblock>
+        <identify>wb_service</identify>
+        <hook_position>displayHome</hook_position>
+        <name_module></name_module>
+        <hook_module></hook_module>
+        <wborder>0</wborder>
+        <insert_module>0</insert_module>
+        <active>0</active>
+        <showhook>1</showhook>
+    </block>
+    <block>
+        <id_wbstaticblock>2</id_wbstaticblock>
+        <identify>wb_testimonial</identify>
+        <hook_position>displayHomeBlock</hook_position>
+        <name_module></name_module>
+        <hook_module></hook_module>
+        <wborder>0</wborder>
+        <insert_module>0</insert_module>
+        <active>0</active>
+        <showhook>1</showhook>
+    </block>
+    <block>
+        <id_wbstaticblock>3</id_wbstaticblock>
+        <identify>wb_footerdown</identify>
+        <hook_position>displayFooterDown</hook_position>
+        <name_module></name_module>
+        <hook_module></hook_module>
+        <wborder>0</wborder>
+        <insert_module>0</insert_module>
+        <active>0</active>
+        <showhook>1</showhook>
+    </block>
+     <block>
+        <id_wbstaticblock>4</id_wbstaticblock>
+        <identify>wb_video</identify>
+        <hook_position>displayTopColumn</hook_position>
+        <name_module></name_module>
+        <hook_module></hook_module>
+        <wborder>0</wborder>
+        <insert_module>0</insert_module>
+        <active>0</active>
+        <showhook>1</showhook>
+    </block>
+<!-- block lang configuration -->
+    <block_lang>
+        <id_wbstaticblock>1</id_wbstaticblock>
+        <id_lang>1</id_lang>
+        <title>Wb Service</title>
+        <description>
+             <![CDATA[<div class="container">
+<div class="row deliveryinfo text-xs-center">
+<div class="col-md-3 col-sm-6 col-xs-12 sbr">
+<ul class="list-unstyled">
+<li><span class="gift"><svg width="45px" height="45px"><use xlink:href="#gift"></use></svg></span></li>
+<li>
+<h4>Free Shipping US</h4>
+<p>order over $250</p>
+</li>
+</ul>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12 sbr">
+<ul class="list-unstyled">
+<li><span class="secure"><svg width="45px" height="45px"><use xlink:href="#pay"></use></svg></span></li>
+<li>
+<h4>Money Guarantee</h4>
+<p>30 day Ruturn</p>
+</li>
+</ul>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12 sbr">
+<ul class="list-unstyled">
+<li><span class="support"><svg width="45px" height="45px"><use xlink:href="#support"></use></svg></span></li>
+<li>
+<h4>Payment Secured</h4>
+<p>Secure payments</p>
+</li>
+</ul>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12 sbr">
+<ul class="list-unstyled">
+<li><span class="shipping"><svg width="45px" height="45px"><use xlink:href="#ship"></use></svg></span></li>
+<li>
+<h4>Power Support</h4>
+<p>Online Support 24/7</p>
+</li>
+</ul>
+</div>
+</div>
+</div>]]>
+        </description>
+    </block_lang>
+    <block_lang>
+        <id_wbstaticblock>2</id_wbstaticblock>
+        <id_lang>1</id_lang>
+        <title>Wb Testimonial</title>
+        <description>
+             <![CDATA[<div class="parallex text-xs-center container">
+<div class="col-md-1"></div>
+<div class="col-md-10 test-head">
+<div id="testi" class="owl-carousel owl-theme">
+<div class="item">
+<ul>
+<li class="t1 timg center-block"></li>
+</ul>
+<p>But I must explain to you how all this mistaken idea of denouncing the master e cites of the word in one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally source. Lorem Ipsum come pleasure and praising pain was born and I will give................</p>
+<div class="parb">
+<ul><svg width="35px" height="35px"><use xlink:href="#quote"></use></svg>
+<li class="text-xs-left">
+<h2>mr. John doe</h2>
+<h3>Directer( CEO)</h3>
+</li>
+</ul>
+</div>
+</div>
+<div class="item">
+<ul>
+<li class="t2 timg center-block"></li>
+</ul>
+<p>But I must explain to you how all this mistaken idea of denouncing the master e cites of the word in one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally source. Lorem Ipsum come pleasure and praising pain was born and I will give................</p>
+<div class="parb">
+<ul><svg width="35px" height="35px"><use xlink:href="#quote"></use></svg>
+<li class="text-xs-left">
+<h2>mr. John doe</h2>
+<h3>Directer(CEO)</h3>
+</li>
+</ul>
+</div>
+</div>
+<div class="item">
+<ul>
+<li class="t3 timg center-block"></li>
+</ul>
+<p>But I must explain to you how all this mistaken idea of denouncing the master e cites of the word in one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally source. Lorem Ipsum come pleasure and praising pain was born and I will give................</p>
+<div class="parb">
+<ul><svg width="35px" height="35px"><use xlink:href="#quote"></use></svg>
+<li class="text-xs-left">
+<h2>mr. John doe</h2>
+<h3>Directer(CEO)</h3>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-1"></div>
+</div>]]>
+        </description>
+    </block_lang>
+    <block_lang>
+        <id_wbstaticblock>3</id_wbstaticblock>
+        <id_lang>1</id_lang>
+        <title>Wb Footerdown</title>
+        <description>
+             <![CDATA[<ul class="foot-payment pull-right">
+<li><svg width="45px" height="45px"><use xlink:href="#ae"></use></svg></li>
+<li><svg width="45px" height="45px"><use xlink:href="#mc"></use></svg></li>
+<li><svg width="45px" height="45px"><use xlink:href="#dis"></use></svg></li>
+<li><svg width="45px" height="45px"><use xlink:href="#visa"></use></svg></li>
+</ul>]]>
+        </description>
+    </block_lang>
+     <block_lang>
+        <id_wbstaticblock>4</id_wbstaticblock>
+        <id_lang>1</id_lang>
+        <title>Wb Video</title>
+        <description>
+             <![CDATA[<div class="homevideo">
+<div class="vedio-bg">
+<div class="play-video" data-toggle="modal" data-target="#vedioModal">
+<div class="payvedio">play video</div>
+</div>
+</div>
+<div id="vedioModal" class="modal fade" role="dialog">
+<div class="modal-dialog">
+<div class="modal-content"><button type="button" class="close" data-dismiss="modal">×</button>
+<div class="modal-body"><iframe width="100%" height="400px" src="https://player.vimeo.com/video/142460640">
+</iframe></div>
+</div>
+</div>
+</div>
+</div>]]>
+        </description>
+    </block_lang>
+<!-- block shop configuration -->
+    <block_shop>
+        <id_wbstaticblock>1</id_wbstaticblock>
+        <id_shop>1</id_shop>
+    </block_shop>
+    <block_shop>
+        <id_wbstaticblock>2</id_wbstaticblock>
+        <id_shop>1</id_shop>
+    </block_shop>
+    <block_shop>
+        <id_wbstaticblock>3</id_wbstaticblock>
+        <id_shop>1</id_shop>
+    </block_shop>
+     <block_shop>
+        <id_wbstaticblock>4</id_wbstaticblock>
+        <id_shop>1</id_shop>
+    </block_shop>
+</wb_static_blocks>

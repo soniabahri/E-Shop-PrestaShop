@@ -1,0 +1,68 @@
+<?php
+
+global $_MODULE;
+$_MODULE = array();
+
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_e92dabb4907f1957cabc469cca4deefc'] = 'Theme configurator';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_93473da855d4cd750fd5e51764bf63c9'] = 'Configure elements of your theme';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_4a79496c7587985e3c709f7a029c0d13'] = 'Over 500+ PrestaShop Premium Templates! Browse Now!';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_149cd107b688af7a007e739fd51ac919'] = 'Successful deletion.';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_ec870aa68b135c4f3adc9a3a2731ddbc'] = 'Can\'t delete the slide.';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_3ee0c881516fce384747e3107dbfc538'] = 'Invalid content';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_fb49ac323fabc125f9943571ab73f96a'] = 'An error occured while saving data.';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_b9099a0a16c40efc8b73f548144d472f'] = 'Successfully updated.';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_07b8c09e490f7afbdcfa9cd5bfcfd4a9'] = 'An error occurred during the image upload.';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_20774b22918021283cd7921f6c7ae5f7'] = 'New item added successfull.';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_f1206f9fadc5ce41694f69129aecac26'] = 'Configure';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_00d23a76e43b46dae9ec7aa9dcbebb32'] = 'Enabled';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_b9f5c797ebbf55adccdd8539a65a0241'] = 'Disabled';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_ff4258cf20863caf86e574ed137c3431'] = 'Live configurator';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_f4f70727dc34561dfde1a3c529b6205c'] = 'Settings';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_c9cc8cce247e49bae79f15173ce97354'] = 'Save';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_1c6d8090124c030b9b9c412169d24e02'] = 'Display the social following links';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_4bae4cdd2d56a5a8b8c320288c5d3426'] = 'Display contact information';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_75cc875db8a03087b03ffb435fbd61cb'] = 'Display social buttons on the products page';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_e039cdfb925c132d4fa33b71b4e17310'] = 'Display facebook block on the home page';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_f3104e70ace9e3ee6b7d8f331200987a'] = 'Customer cms information block';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_a8f6b8ca3dd1f002eee8027b26ce7d41'] = 'Enable Quick view';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_158fc4b90f7acab3770c57827fb0e424'] = 'Enable top banner';
+$_MODULE['<{themeconfigurator}prestashop>themeconfigurator_dc66fd9bafb655d97ccbb30749692a2d'] = 'Enable product payment logos';
+$_MODULE['<{themeconfigurator}prestashop>items_b9b371458ab7c314f88b81c553f6ce51'] = 'Hook';
+$_MODULE['<{themeconfigurator}prestashop>items_d668a0bf7369875d70cc64a38393c8eb'] = 'Click image to enlarge/reduce';
+$_MODULE['<{themeconfigurator}prestashop>items_7dce122004969d56ae2e0245cb754d35'] = 'Edit';
+$_MODULE['<{themeconfigurator}prestashop>items_d3d2e617335f08df83599665eef8a418'] = 'Close';
+$_MODULE['<{themeconfigurator}prestashop>items_4d3d769b812b6faa6b76e1a8abaece2d'] = 'Active';
+$_MODULE['<{themeconfigurator}prestashop>items_b78a3223503896721cca1303f776159b'] = 'Title';
+$_MODULE['<{themeconfigurator}prestashop>items_2c92d496fa8efe3d5b2b38c185f9b7f7'] = 'Use title in front';
+$_MODULE['<{themeconfigurator}prestashop>items_be53a0541a6d36f6ecb879fa2c584b08'] = 'Image';
+$_MODULE['<{themeconfigurator}prestashop>items_6fed80a8c8ded2f5e14a687e4a443abc'] = 'Image width';
+$_MODULE['<{themeconfigurator}prestashop>items_2aa3aa9d021c7cfffb5afa08f52fbc51'] = 'Image height';
+$_MODULE['<{themeconfigurator}prestashop>items_e6b391a8d2c4d45902a23a8b6585703d'] = 'URL';
+$_MODULE['<{themeconfigurator}prestashop>items_4c87eb073eb09f42281d7e67aeacb223'] = 'Target blank';
+$_MODULE['<{themeconfigurator}prestashop>items_4c4ad5fca2e7a3f74dbb1ced00381aa4'] = 'HTML';
+$_MODULE['<{themeconfigurator}prestashop>items_1063e38cb53d94d386f21227fcd84717'] = 'Remove';
+$_MODULE['<{themeconfigurator}prestashop>items_c9cc8cce247e49bae79f15173ce97354'] = 'Save';
+$_MODULE['<{themeconfigurator}prestashop>items_f453e0c33edd79653febd0b9bc8f09b3'] = 'No items available';
+$_MODULE['<{themeconfigurator}prestashop>new_ff19c966036b4a0c7350b2fc7e2861c2'] = 'Add item';
+$_MODULE['<{themeconfigurator}prestashop>new_4994a8ffeba4ac3140beb89e8d41f174'] = 'Language';
+$_MODULE['<{themeconfigurator}prestashop>new_b78a3223503896721cca1303f776159b'] = 'Title';
+$_MODULE['<{themeconfigurator}prestashop>new_2c92d496fa8efe3d5b2b38c185f9b7f7'] = 'Use title in front';
+$_MODULE['<{themeconfigurator}prestashop>new_b9b371458ab7c314f88b81c553f6ce51'] = 'Hook';
+$_MODULE['<{themeconfigurator}prestashop>new_be53a0541a6d36f6ecb879fa2c584b08'] = 'Image';
+$_MODULE['<{themeconfigurator}prestashop>new_6fed80a8c8ded2f5e14a687e4a443abc'] = 'Image width';
+$_MODULE['<{themeconfigurator}prestashop>new_2aa3aa9d021c7cfffb5afa08f52fbc51'] = 'Image height';
+$_MODULE['<{themeconfigurator}prestashop>new_e6b391a8d2c4d45902a23a8b6585703d'] = 'URL';
+$_MODULE['<{themeconfigurator}prestashop>new_4c87eb073eb09f42281d7e67aeacb223'] = 'Target blank';
+$_MODULE['<{themeconfigurator}prestashop>new_4c4ad5fca2e7a3f74dbb1ced00381aa4'] = 'HTML';
+$_MODULE['<{themeconfigurator}prestashop>new_c9cc8cce247e49bae79f15173ce97354'] = 'Save';
+$_MODULE['<{themeconfigurator}prestashop>live_configurator_f5a35b8e88be7f51ad3a3714a83df3a1'] = 'The customization tool allows you to make color and font changes in your theme.';
+$_MODULE['<{themeconfigurator}prestashop>live_configurator_55416cca05f1ccf952bae67769d13792'] = 'Only you, as a merchant can see this tool (as you are currently logged in your Back-office), your visitors will not see this tool.';
+$_MODULE['<{themeconfigurator}prestashop>live_configurator_402bf0c47e80d12feba49f31fdcbc11f'] = 'Color theme';
+$_MODULE['<{themeconfigurator}prestashop>live_configurator_194f5394ae2e9c74dc3c441b92862d1d'] = 'Font';
+$_MODULE['<{themeconfigurator}prestashop>live_configurator_8612579044efe457f11398b5a2377226'] = 'Titles';
+$_MODULE['<{themeconfigurator}prestashop>live_configurator_ea3aba27f515989b46d990e95a097818'] = 'Choose a font';
+$_MODULE['<{themeconfigurator}prestashop>live_configurator_526d688f37a86d3c3f27d0c5016eb71d'] = 'Reset';
+$_MODULE['<{themeconfigurator}prestashop>live_configurator_c9cc8cce247e49bae79f15173ce97354'] = 'Save';
+
+
+return $_MODULE;
